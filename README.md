@@ -1,2 +1,2 @@
 # Tastie-
-Receips &amp; Food Appreciation
+Receipes &amp; Food Appreciation
