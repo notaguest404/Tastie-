@@ -1,0 +1,188 @@
+html,body{
+    height: 100%;
+    max-height: 100%;
+    max-width: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+*{
+    box-sizing: border-box;
+}
+.tableContainerClass{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border-spacing: 0;
+}
+
+/*----------------Login - Esquerda----------------*/
+.backgroundContainer{
+    width: 50%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+.registerBackgroundPic{
+  min-height: 100%;
+  width: 50%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.459);
+}
+.registerBox{
+    width: 650px;
+    height: 1000px;
+    margin: auto;
+    margin-bottom: 20%;
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    border-radius: 2%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.219), 4px 0 8px 0 rgba(0, 0, 0, 0.212);
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password], input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+.registerButton {
+    background-color: rgb(255, 61, 61);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    padding-top: 16px;
+    border-radius: 2ex;
+    font-weight: bolder;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+    opacity: 0.8;
+}
+
+/* Add padding and style to containers */
+.container {
+    padding: 16px;
+}
+/* The "Forgot password" text */
+span.psw {
+    float: right;
+    padding-right: 16px;
+}
+
+.footer{
+    padding-bottom: 0px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(255, 61, 61);
+    color: white;
+    text-align: center;
+}
+
+/*header*/
+
+.bg-steel {
+    background-color: rgb(255, 61, 61);
+  }
+
+.logo{
+    width: 70px;
+    height: auto;
+    margin-left: -600px;
+}
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+    display: block;
+    float: none;
+  }
+}
+/*-----------------------------------------------------*/
+
+/*--------------------Join - Direita------------------*/
+.loginContainer{
+
+    width: 50%;
+    height: 90%;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(128, 255, 128);
+}
+.rightBox{
+    width: 350px;
+    height: 300px;
+    margin: auto;
+    position: relative;
+}
+.siteText{
+    padding-top: 2.5ex;
+    color: rgb(255, 255, 230);
+    text-align: justify;
+    padding-bottom: 2.5ex;
+}
+.loginbtn{
+    background-color: rgb(255, 61, 61);
+    width: 15ex;
+    height: 6ex;
+    border-radius: 2ex;
+    max-width: 85%;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    border: none;
+    font-weight: bolder;
+}
+#joinButtonText{
+    font-size: 2em;
+    margin: auto;
+    font-weight: bolder;
+}
+.tastieLogo{
+    width: 200px;
+    height: auto;
+    margin-left: 21%;
+}
+/*-----------------------------------------------------*/
+@media only screen and (max-width: 600px) {
+    body{
+        background-color: rgb(15, 24, 53);
+    }
+    .backgroundContainer{
+    display: table-row;
+    }
+    .loginContainer{
+    display: table-row;
+    }
+    .loginBox{
+        border-radius: 0;
+    }
+    .loginBackgroundPic{
+        display: none;
+    }
+    .loginContainer{
+        width: 100%;
+        height: 200%;
+        margin: 20%;
+        padding: 20%;
+        background-color: rgb(7, 39, 58);
+    }
+    span.psw {
+        display: block;
+        float: none;
+      }
+  }

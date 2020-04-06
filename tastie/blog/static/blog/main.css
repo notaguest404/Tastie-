@@ -8,24 +8,30 @@ ul {
 }
 
 .bg-steel {
-  background-color: #99e6ff;
+  background-color: #cc0000;
+}
+
+.logo{
+  font-family: 'Anton';
+  font-size: 25px;
+  color: rgb(204, 255, 204);
 }
 
 .site-header .navbar-nav .nav-link {
-  color: #ffffff;
+  font-family: 'Anton';
+  color: #ffb3b3;
 }
 
 .site-header .navbar-nav .nav-link:hover {
-  color: #e6ffe6;
+  color: #99ff99;
 }
 
 .site-header .navbar-nav .nav-link.active {
   font-weight: 500;
 }
 
-.logoTastie{
-  width: 70px;
-  height: auto;
+.text-muted{
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .content-section {
@@ -37,11 +43,12 @@ ul {
 }
 
 .article-title {
+  font-family: 'Anton';
   color: #ff4d6a;
 }
 
 .article-title:hover {
-  color: #ff2245;
+  color: #ff0000;
   text-decoration: none;
 }
 
@@ -58,11 +65,12 @@ ul {
 .article-metadata {
   padding-bottom: 1px;
   margin-bottom: 4px;
-  border-bottom: 1px solid #e3e3e3
+  border-bottom: 1px solid #e3e3e3;
+  font-family: 'Anton';
 }
 
 .article-metadata :hover {
-  color: #333;
+  color: #000099;
   text-decoration: none;
 }
 
