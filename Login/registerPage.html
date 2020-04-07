@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="index" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Tastie!</title>
+        <link rel="stylesheet" href="style/register.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amiko">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baloo">
+    </head>
+    <body>
+        <table class="tableContainerClass">
+            <tbody class="tableBodyContainerClass">
+                <tr class="tableRowContainerClass">
+                  <td class="backgroundContainer">
+                    <img class="registerBackgroundPic" src="images/food.jpg" />
+                    <div class="registerBox">
+                      <form action="feedPage.html" method="post">
+                        <div class="container">
+                          <label for="name"><b>First Name</b></label>
+                          <input type="text" placeholder="Enter First Name" name="name" required />
+                          <label for="name"><b>Last Name</b></label>
+                          <input type="text" placeholder="Enter Last Name" name="name" required />
+                          <label for="uname"><b>Username</b></label>
+                          <input type="text" placeholder="Enter Username" name="uname" required />
+                          <label for="email"><b>Email</b></label>
+                          <input type="email" placeholder="Enter your email" name="email">
+                          <label for="psw"><b>Password</b></label>
+                          <input type="password" placeholder="Enter Password" name="psw" required />
+                          <label for="psw"><b>Repeat Password</b></label>
+                          <input type="password" placeholder="Repeat Password" name="psw" required />
+                          <p></p>
+                          <button type="submit" class="registerButton">Register</button>
+                        </div>
+                        <div class="containerForgotPassword">
+                          <span class="psw"><a href="#">E-mail already exists?</a></span>
+                        </div>
+                      </form>
+                    </div>
+                    </td>
+                    <td class="loginContainer">
+                      <div class="rightBox">
+                        <div class="logoTastie">
+                          <img class="tastieLogo" src="images/logoRed.png"/>
+                        </div>
+                        <div class="siteText">
+                          Share your love for food with everyone! Upload and share recipes that make life more tasty. 
+                          <br>
+                          <p>Join our community for the ultimate Social CookBook experience.</p>
+                        </div>
+                        <form id="joinButton" action="loginPage.html">
+                        <button type="submit" class="loginbtn" >Login</button>
+                        </form>
+                      </div>
+                      <div class="footer">
+                        <br>
+                        <p>&copy; 2020 All rights reserved | Tastie!<p>
+                      </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Latest compiled and minified CSS -->
+        <link
+          rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        />
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <!-- icons fontawesome -->
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    </body>
+</html>
