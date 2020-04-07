@@ -120,6 +120,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/static/' #settings to use static featueres like scripts and css files
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') #location of our base media directory
+MEDIA_URL = '/media/' #path for the media directory
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4' #template to use bootstrap latest version
+
+LOGIN_REDIRECT_URL = 'blog-home' #page to redirect after login
+LOGIN_URL = 'login' #redirect to login page to acces certins pages
