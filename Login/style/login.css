@@ -95,17 +95,6 @@ span.psw {
     text-align: center;
 }
 
-/*header*/
-
-/*.bg-steel {
-    background-color: rgb(245,230,146);
-  }
-
-.logo{
-    width: 70px;
-    height: auto;
-}*/
-
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
   span.psw {
@@ -201,7 +190,3 @@ span.psw {
         float: none;
       }
   }
-
-  /*@media only screen and (max-width:1440px){
-
-  }*/

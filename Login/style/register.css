@@ -36,7 +36,7 @@ html,body{
 }
 .registerBox{
     width: 450px;
-    height: 700px;
+    height: 720px;
     margin: auto;
     position: relative;
     background-color: rgb(255, 255, 255);
@@ -94,17 +94,7 @@ span.psw {
     text-align: center;
 }
 
-/*header*/
 
-.bg-steel {
-    background-color: rgb(255, 61, 61);
-  }
-
-.logo{
-    width: 70px;
-    height: auto;
-    margin-left: -600px;
-}
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
   span.psw {
@@ -164,13 +154,13 @@ span.psw {
     .backgroundContainer{
     display: table-row;
     }
-    .loginContainer{
+    .registerContainer{
     display: table-row;
     }
-    .loginBox{
+    .registerBox{
         border-radius: 0;
     }
-    .loginBackgroundPic{
+    .registerBackgroundPic{
         display: none;
     }
     .loginContainer{
