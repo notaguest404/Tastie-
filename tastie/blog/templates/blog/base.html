@@ -64,6 +64,11 @@
                 <li class="list-group-item list-group-item-light">etc</li>
               </ul>
             </p>
+            {% if user.is_authenticated %}
+              <a class="btn btn-success btn-lg btn-block" name="button" href="{% url 'post-create' %}">Post Recipe!</a>
+            {% else %}
+              <a class="btn btn-success btn-lg btn-block" name="button" href="{% url 'post-create' %}">Post Recipe!</a>
+            {% endif %}
           </div>
         </div>
       </div>

@@ -1,0 +1,25 @@
+{% extends "blog/base.html" %}
+{% block content %}
+  <article class="media content-section">
+    <img class="rounded-circle article-img" src="{{ object.author.profile.image.url }}">
+    <div class="media-body">
+      <div class="article-metadata">
+        <div class="">
+          <a class="mr-2" href="#">{{ object.author }}</a>
+          <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
+            {% if object.author == user %}
+              <button class="dropdown float-right dotsbtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="test icon-bar"></a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="{% url 'post-update' object.id %}"> Update </a>
+                  <a class="dropdown-item " href="{% url 'post-delete' object.id %}"> Delete </a>
+                </div>
+              </button>
+            {% endif %}
+          </div>
+        </div>
+      <h2 class="article-title">{{ object.title }}</h2>
+      <p class="article-content">{{ object.content }}</p>
+    </div>
+  </article>
+{% endblock content %}
