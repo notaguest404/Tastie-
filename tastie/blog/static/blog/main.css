@@ -103,3 +103,13 @@ ul {
   border: none;
   outline:none;
 }
+.anton{
+  color: #4dbf6c;
+  font-family: 'Anton';
+  font-size: 2em;
+}
+.recipe-font{
+  font-size:1.5em;
+  font-family: 'Anton';
+  color: #464a4a;
+}

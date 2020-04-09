@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin #import nedded to require to the user be logged in and be the author to update or delete it
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView #class based view
 from .models import Post
+from django.contrib.auth.models import User
 
 def home(request):
     context = {
@@ -11,9 +12,20 @@ def home(request):
 
 class PostListView(ListView):
     model = Post
+    paginate_by = 8
     template_name = 'blog/home.html'
     context_object_name = 'posts'
     ordering = ['-date_posted'] #show new posts up in page
+
+class UserPostListView(ListView):
+    model = Post
+    paginate_by = 6
+    template_name = 'blog/user_posts.html'
+    context_object_name = 'posts'
+
+    def get_queryset(self):
+        user = get_object_or_404(User, username =self.kwargs.get('username'))
+        return Post.objects.filter(author=user).order_by('-date_posted')
 
 class PostDetailView(DetailView):
     model = Post
