@@ -57,7 +57,7 @@ ROOT_URLCONF = 'tastie.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -135,4 +135,4 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'tastietest@gmail.com' #not secure
-EMAIL_HOST_PASSWORD = 'tastie121' #not secure
+EMAIL_HOST_PASSWORD = 'tastieteste121' #not secure

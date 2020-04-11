@@ -1,14 +1,29 @@
 {% extends "blog/base.html" %}
 {% load static %}
 {% block content %}
-<strong class="anton">{{ view.kwargs.username }}</strong>
-<strong class="recipe-font">&nbsp Recipes!</strong>
-<p class="text-muted mb-4">{{ page_obj.paginator.count }} recipe(s) found</p>
+<div class="content-section">
+  <div class="media">
+    {% for post in posts|slice:":1" %}
+      <img class="rounded-circle account-img mb-4 mt-4" src="{{ post.author.profile.image.url }}">
+
+      <div class="media-body mt-3">
+        <strong class="mt-8 anton">{{ view.kwargs.username }}</strong>
+        <strong class="recipe-font">Recipes!</strong>
+        <p class="text-muted mb-3 ">{{ page_obj.paginator.count }} recipe(s) shared!</p>
+        <div class=" text-justify text-muted  mb-4"><strong>Bios:</strong> <br>{{  post.author.profile.bio }}</div>
+      </div>
+  </div>
+
+
+  {% endfor %}
+
+  <div class="anton mb-3 ml-1 underline">
+    Recipes:
+  </div>
   <div class="infinite-container">
     {% for post in posts %}
       <div class="infinite-item">
         <article class="media content-section">
-          <img class="rounded-circle article-img"src="{{ post.author.profile.image.url }}" alt="Profile Pic">
           <div class="media-body">
             <div class="article-metadata">
               <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
@@ -20,6 +35,7 @@
       </div>
     {% endfor %}
   </div>
+</div>
 
   {% if page_obj.has_next %}
     <a class="infinite-more-link" href="?page={{ page_obj.next_page_number }}"></a>
@@ -32,13 +48,6 @@
   <script>
     var infinite = new Waypoint.Infinite({
       element: $('.infinite-container')[0],
-      onBeforePageLoad: function () {
-        $('.loading').show();
-      },
-      onAfterPageLoad: function ($items) {
-        window.history.pushState()
-        $('.loading').hide();
-      }
     });
   </script>
 

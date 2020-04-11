@@ -1,5 +1,5 @@
 body {
-  background: #fafafa;
+  background: #fffcf2;
   margin-top: 5rem;
 }
 
@@ -8,22 +8,21 @@ ul {
 }
 
 .bg-steel {
-  background-color: #cc0000;
+  background-color: #64b32d;
 }
 
 .logo{
   font-family: 'Anton';
   font-size: 25px;
-  color: rgb(204, 255, 204);
 }
 
 .site-header .navbar-nav .nav-link {
   font-family: 'Anton';
-  color: #ffb3b3;
+  color: #ffffff;
 }
 
 .site-header .navbar-nav .nav-link:hover {
-  color: #99ff99;
+  color: #db2e2e;
 }
 
 .site-header .navbar-nav .nav-link.active {
@@ -97,19 +96,31 @@ ul {
   font-size: 1em;
   color: #2e2e2e
 }
+
 .dotsbtn{
   background-color: transparent;
   background-repeat:no-repeat;
   border: none;
   outline:none;
 }
+
 .anton{
-  color: #4dbf6c;
+  color: #fa3940;
   font-family: 'Anton';
   font-size: 2em;
 }
+
 .recipe-font{
   font-size:1.5em;
   font-family: 'Anton';
   color: #464a4a;
+}
+
+.search-form{
+  max-width: 350px;
+  width: 100%
+}
+
+.underline{
+  border-bottom: 1px solid #e3e3e3;
 }

@@ -1,4 +1,3 @@
-
 {% extends "blog/base.html" %}
 {% load static %}
 {% block content %}
@@ -30,13 +29,6 @@
   <script>
     var infinite = new Waypoint.Infinite({
       element: $('.infinite-container')[0],
-      onBeforePageLoad: function () {
-        $('.loading').show();
-      },
-      onAfterPageLoad: function ($items) {
-        window.history.pushState()
-        $('.loading').hide();
-      }
     });
   </script>
 

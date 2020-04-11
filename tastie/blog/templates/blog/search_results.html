@@ -1,0 +1,35 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block content %}
+  <div class="infinite-container">
+    {% for post in posts %}
+      <div class="infinite-item">
+        <article class="media content-section">
+          <img class="rounded-circle article-img"src="{{ post.author.profile.image.url }}" alt="Profile Pic">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
+              <small class="text-muted">{{ post.date_posted|date:"d/m/Y G:i" }}</small>
+            </div>
+            <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
+          </div>
+        </article>
+      </div>
+    {% endfor %}
+  </div>
+
+  {% if page_obj.has_next %}
+    <a class="infinite-more-link" href="?page={{ page_obj.next_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}"></a>
+  {% endif %}
+
+  <script src="{% static 'blog/js/jquery-3.1.1.min.js' %}"></script>
+  <script src="{% static 'blog/js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'blog/js/infinite.min.js' %}"></script>
+
+  <script>
+    var infinite = new Waypoint.Infinite({
+      element: $('.infinite-container')[0],
+    });
+  </script>
+
+{% endblock content %}

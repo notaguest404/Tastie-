@@ -16,7 +16,7 @@ def register(request):
     return render(request, 'users/register.html', {'form': form})
 
 @login_required
-def profile(request):
+def update_profile(request):
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
         p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
@@ -33,4 +33,11 @@ def profile(request):
         'u_form': u_form,
         'p_form': p_form
     }
-    return render(request, 'users/profile.html', context)
+    return render(request, 'users/user_update.html', context)
+
+def profile(request):
+    posts =[]
+    def get_queryset(self):
+        user = get_object_or_404(User, username =self.kwargs.get('username')) #prevent access to unable profiles
+        posts = Post.objects.filter(author=user).order_by('-date_posted') #order posts by most recents
+    return render(request, 'users/profile.html', {'posts':posts})

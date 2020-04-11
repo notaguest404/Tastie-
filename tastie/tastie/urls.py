@@ -45,6 +45,7 @@ urlpatterns = [
              template_name='users/password_reset_complete.html'
          ),
          name='password_reset_complete'),
+    path('user_update/', user_views.update_profile, name='update-profile'),
     path('profile/', user_views.profile, name='profile'),
     path('', include('blog.urls')),
 ]
