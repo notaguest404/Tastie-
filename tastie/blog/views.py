@@ -73,6 +73,6 @@ class SearchResultsView(ListView):
     def get_queryset(self): # new
         query = self.request.GET.get('q')
         object_list = Post.objects.filter(
-            Q(title__icontains=query) | Q(content__icontains=query) | Q(tags__icontains=query) | Q(author__username__icontains=query)
+            Q(title__icontains=query) | Q(content__icontains=query) | Q(tags__slug__icontains=query) | Q(author__username__icontains=query)
         )
         return object_list.order_by('-date_posted')

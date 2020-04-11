@@ -4,7 +4,7 @@
 <div class="content-section">
   <div class="media">
     {% for post in posts|slice:":1" %}
-      <img class="rounded-circle account-img mb-4 mt-4" src="{{ post.author.profile.image.url }}">
+      <img class="rounded-circle account-img mb-4 mt-3" src="{{ post.author.profile.image.url }}">
 
       <div class="media-body mt-3">
         <strong class="mt-8 anton">{{ view.kwargs.username }}</strong>

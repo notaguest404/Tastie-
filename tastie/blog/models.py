@@ -4,6 +4,7 @@ from django.contrib.auth.models import User #User table inside django project
 from django.urls import reverse
 from .forms import DIF_CHOICES
 from django import forms
+from taggit.managers import TaggableManager
 
 class Post(models.Model):
 
@@ -17,7 +18,7 @@ class Post(models.Model):
     method = models.TextField(default='Method')
     servings = models.CharField(max_length=2, default= '4')
     ingredients = models.TextField(default='Ingredients')
-    tags = models.CharField(max_length=200, default='#tastie!')
+    tags = TaggableManager(blank=True)
 
     def __str__(self):
         return self.title
