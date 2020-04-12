@@ -36,8 +36,4 @@ def update_profile(request):
     return render(request, 'users/user_update.html', context)
 
 def profile(request):
-    posts =[]
-    def get_queryset(self):
-        user = get_object_or_404(User, username =self.kwargs.get('username')) #prevent access to unable profiles
-        posts = Post.objects.filter(author=user).order_by('-date_posted') #order posts by most recents
-    return render(request, 'users/profile.html', {'posts':posts})
+    return render(request, 'users/profile.html')

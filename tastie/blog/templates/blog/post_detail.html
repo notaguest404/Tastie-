@@ -1,25 +1,27 @@
 {% extends "blog/base.html" %}
 {% block content %}
   <article class="media content-section">
-    <img class="rounded-circle article-img" src="{{ object.author.profile.image.url }}">
     <div class="media-body">
       <div class="article-metadata">
+        {% if object.author == user %}
+          <a role="button" class="test float-right" type="button" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret">
+            <a class="icon-bar"></a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li><a class="dropdown-item" href="{% url 'post-update' object.id %}"> Update </a></li>
+              <li><a class="dropdown-item " href="{% url 'post-delete' object.id %}"> Delete </a></li>
+            </ul>
+          </a>
+        {% endif %}
+        <h2 class="article-title mt-3 mb-2">{{ object.title }}</h2>
+
         <div class="">
           <a class="mr-2" href="{% url 'user-posts' object.author.username %}">{{ object.author }}</a>
-          <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
-            {% if object.author == user %}
-              <a role="button" class="test float-right" type="button" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret">
-                <a class="icon-bar"></a>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <li><a class="dropdown-item" href="{% url 'post-update' object.id %}"> Update </a></li>
-                  <li><a class="dropdown-item " href="{% url 'post-delete' object.id %}"> Delete </a></li>
-                </ul>
-              </a>
-            {% endif %}
+          <small class="text-muted">Posted: {{ object.date_posted|date:"F d, Y" }}</small>
+
           </div>
         </div>
-      <h2 class="article-title">{{ object.title }}</h2>
-      <p class="article-content">{{ object.content }}</p>
+      <p class="article-content mt-2">{{ object.content }}</p>
+      <img src="{{ post.image.url }}" alt="post-image" class="img-fluid rounded mx-auto d-block">
     </div>
   </article>
 {% endblock content %}

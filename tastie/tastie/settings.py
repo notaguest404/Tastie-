@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'taggit'
+    'taggit',
+    'easy_thumbnails',
+    'image_cropping'
 ]
 
 MIDDLEWARE = [
@@ -129,11 +131,20 @@ MEDIA_URL = '/media/' #path for the media directory
 CRISPY_TEMPLATE_PACK = 'bootstrap4' #template to use bootstrap latest version
 
 LOGIN_REDIRECT_URL = 'blog-home' #page to redirect after login
-LOGIN_URL = 'login' #redirect to login page to acces certins pages
+LOGIN_URL = 'login' #redirect to login page to acces certains pages
 
+#email settings to update user password
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'tastietest@gmail.com' #not secure
 EMAIL_HOST_PASSWORD = 'tastieteste121' #not secure
+
+#settings to process images
+from easy_thumbnails.conf import Settings as thumbnail_settings
+THUMBNAIL_PROCESSORS = (
+
+'image_cropping.thumbnail_processors.crop_corners',
+
+) + thumbnail_settings.THUMBNAIL_PROCESSORS

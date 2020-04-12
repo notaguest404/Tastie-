@@ -80,10 +80,12 @@ ul {
 }
 
 .account-img {
-  height: 125px;
   width: 125px;
+  height: 125px;
   margin-right: 20px;
   margin-bottom: 16px;
+  border-radius: 50%;
+  display: block;
 }
 
 .account-heading {
@@ -123,4 +125,13 @@ ul {
 
 .underline{
   border-bottom: 1px solid #e3e3e3;
+}
+
+.arial-gray{
+  font-size:0.8em;
+  font-family: 'arial';
+  color: gray;
+}
+
+.post-image{
 }

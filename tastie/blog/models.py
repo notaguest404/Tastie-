@@ -5,6 +5,7 @@ from django.urls import reverse
 from .forms import DIF_CHOICES
 from django import forms
 from taggit.managers import TaggableManager
+from PIL import Image
 
 class Post(models.Model):
 
@@ -25,3 +26,13 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse('post-detail', kwargs={'pk': self.pk}) #return full path as string
+
+    def save(self,*args, **kwargs): #change save method to resize image passed by the user
+        super(Post, self).save(*args, **kwargs)
+
+        img= Image.open(self.image.path) #open image of current instance
+
+        if img.height > 1000 or img.width > 1000:
+            output_size = (1000, 1000)
+            img.thumbnail(output_size)
+            img.save(self.image.path) #save resized image
