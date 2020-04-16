@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Tastie!</title>
+    <link rel="stylesheet" href="style/profile.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amiko" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baloo" />
+</head>
+
+<di>
+    <table class="tableContainerClass">
+        <tbody class="tableBodyContainerClass">
+            <tr class="tableRowContainerClass">
+                <td class="profileContainer">                   
+                    <header class="site-header">
+                        <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+                            <div class="container">
+                                <a class="logo navbar-brand mr-4" href="/"> TASTIE! </a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarToggle">
+                                    <div class="navbar-nav mr-auto">
+                                        <a class="nav-item nav-link" href="{% url 'blog-home' %}">Feed</a>
+                                        <a class="nav-item nav-link" href="{% url 'user-posts' user.username %}">My Recipes</a>
+                                    </div>
+                                    <!-- Navbar Right Side -->
+                                    <div class="navbar-nav">
+                                        <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
+                                        <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+                                        <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+                                        <div class="search-form ml-sm-2">
+                                            <form class="" action="#" method="get">
+                                              <input type="text" name="q" id="id_q" class="form-control" placeholder="Search">
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                    </header>
+                <td class="sideContainer">
+                    <div class="container d-md-flex align-items-stretch">
+                        <nav id="sidebar">
+                            <div class="p-4 pt-5">
+                                <h5>Bookmarks</h5>
+                                <ul class="list-unstyled components mb-5">
+                                <li>
+                                    <a href="#pageSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Latest Posts</a>
+                                    <ul class="collapse list-unstyled" id="pageSubmenu1">
+                                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span> Fritata</a></li>
+                                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span> Salad</a></li>
+                                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span> Lasagna</a></li>
+                                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span> Lemon Chicken</a></li>
+                                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span> Pancakes</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Announcement</a>
+                                    <ul class="collapse list-unstyled" id="pageSubmenu2">
+                                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span> Food</a></li>
+                                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span> Football</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#pageSubmenu3" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Accessories</a>
+                                    <ul class="collapse list-unstyled" id="pageSubmenu3">
+                                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span> Nicklace</a></li>
+                                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span> Ring</a></li>
+                                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span> Bag</a></li>
+                                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span> Sacks</a></li>
+                                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span> Lipstick</a></li>
+                                    </ul>
+                                </li>
+                                <br>
+                                <br>
+                                <div class="mb-4">
+                                    <h5>Tag</h5>
+                                    <div class="tagcloud">
+                                        <a href="#" class="tag-cloud-link">#serra</a>
+                                        <a href="#" class="tag-cloud-link">#Pasta</a>
+                                        <a href="#" class="tag-cloud-link">#Cheese</a>
+                                        <a href="#" class="tag-cloud-link">#Rise</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>                  
+                </td>
+                <div class="footer">
+                    <p></p>
+                      <p>&copy; 2020 All rights reserved | Tastie!<p>
+                </div>
+            </tr>
+        </tbody>
+    </table>
+        <!-- Latest compiled and minified CSS -->
+        <link
+          rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        />
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <!-- icons fontawesome -->
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</html>
