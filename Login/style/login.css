@@ -6,9 +6,12 @@ html,body{
     padding: 0;
     margin: 0;
 }
+
 *{
     box-sizing: border-box;
 }
+
+  
 .tableContainerClass{
     width: 100%;
     height: 100%;
@@ -85,12 +88,11 @@ span.psw {
 }
 
 .footer{
-    padding-bottom: 0px;
     position: fixed;
-    left: 0;
     bottom: 0;
-    width: 100%;
-    background-color: rgb(255, 61, 61);
+    width: 50%;
+    height: auto;
+    background-color: #9c0e21;
     color: white;
     text-align: center;
 }
@@ -126,7 +128,7 @@ span.psw {
     padding-bottom: 2.5ex;
 }
 .registerbtn{
-    margin-left: 15%;
+    margin-left: 10%;
     background-color: rgb(255, 61, 61);
     width: 15ex;
     height: 6ex;
@@ -148,7 +150,7 @@ span.psw {
     margin-left: 21%;
 }
 .discoverbtn{
-    margin-left: 10%;
+    margin-left: 11%;
     background-color: rgb(255, 61, 61);
     width: 15ex;
     height: 6ex;
@@ -179,14 +181,30 @@ span.psw {
         display: none;
     }
     .loginContainer{
-        width: 100%;
-        height: 200%;
+        width: 800px;
+        height: 400px;
         margin: 20%;
         padding: 20%;
-        background-color: rgb(7, 39, 58);
+        background-color: rgb(128, 255, 128);
     }
     span.psw {
         display: block;
         float: none;
       }
+      
+      .footer{
+        height: 7%;
+        text-align: center;
+        display: inline-block ;
+        width: 100%;
+      }
+      .loginBox{
+        width: 300px;
+        height: 360px;
+        margin: auto;
+        position: relative;
+        background-color: rgb(255, 255, 255);
+        border-radius: 2%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.219), 4px 0 8px 0 rgba(0, 0, 0, 0.212);
+    }
   }

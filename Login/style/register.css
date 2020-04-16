@@ -84,16 +84,14 @@ span.psw {
 }
 
 .footer{
-    padding-bottom: 0px;
     position: fixed;
-    left: 0;
     bottom: 0;
-    width: 100%;
-    background-color: rgb(255, 61, 61);
+    width: 50%;
+    height: auto;
+    background-color: #9c0e21;
     color: white;
-    text-align: center;
+    text-align: center
 }
-
 
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
