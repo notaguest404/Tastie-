@@ -1,27 +1,113 @@
 {% extends "blog/base.html" %}
 {% block content %}
   <article class="media content-section">
-    <div class="media-body">
-      <div class="article-metadata">
-        {% if object.author == user %}
-          <a role="button" class="test float-right" type="button" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret">
-            <a class="icon-bar"></a>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <li><a class="dropdown-item" href="{% url 'post-update' object.id %}"> Update </a></li>
-              <li><a class="dropdown-item " href="{% url 'post-delete' object.id %}"> Delete </a></li>
-            </ul>
-          </a>
-        {% endif %}
-        <h2 class="article-title mt-3 mb-2">{{ object.title }}</h2>
+    <div class="col">
 
-        <div class="">
-          <a class="mr-2" href="{% url 'user-posts' object.author.username %}">{{ object.author }}</a>
-          <small class="text-muted">Posted: {{ object.date_posted|date:"F d, Y" }}</small>
-
+          <!-- Title -->
+          <div class="">
+            {% if object.author == user %}
+              <a role="button" class="test float-right mt-1" type="button" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret">
+                <a class="icon-bar"></a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <li><a class="dropdown-item" href="{% url 'post-update' object.id %}"> Update </a></li>
+                  <li><a class="dropdown-item " href="{% url 'post-delete' object.id %}"> Delete </a></li>
+                </ul>
+              </a>
+            {% endif %}
+            <h1 class="mt-3 mb-3 anton">{{ object.title }}</h1>
           </div>
-        </div>
-      <p class="article-content mt-2">{{ object.content }}</p>
-      <img src="{{ post.image.url }}" alt="post-image" class="img-fluid rounded mx-auto d-block">
+
+          <hr>
+          <!-- Author -->
+          <p class="lead text-muted small-text mt-2">
+            by
+            <a href="{% url 'user-posts' object.author.username %}">{{ object.author }}</a>
+            <small class="small-text float-right">Posted on {{ object.date_posted|date:"F d, Y" }}</small>
+          </p>
+          <hr>
+
+          <!-- Preview Image -->
+          <img src="{{ post.image.url }}" alt="post-image" class="img-fluid rounded mx-auto d-block  post-image">
+
+          <!-- Difficulty servings and duration -->
+          <hr>
+          <p class="text-muted small-text">Difficulty: {{ object.get_difficulty_display }}  &nbsp|&nbsp  Servings: {{ object.servings }}  &nbsp|&nbsp  Duration: {{ object.duration }}</p>
+          <hr>
+
+          <!-- Content Ingredients and method -->
+          <p class="lead text-muted small-text mt-2 mb-2">Description: {{object.content}}</p>
+          <hr>
+          <div class="block">
+            <div class="row">
+              <div class="span4">
+                <span class="text-muted mb-1 ml-3">Ingredients:</span><br>
+                <div class="ml-4 mt-1 mb-3">{{ object.ingredients|linenumbers|linebreaks}}</div>
+                <div class="mt-4">
+                  <span class="text-muted mb-1 ml-3 ">Method:</span><br>
+                  <div class="ml-4 mb-5 mt-1 mr-4 text-justify">{{ object.method|linebreaks}}</div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <footer class="page-footer font-small">
+
+          <!-- Copyright -->
+          <div class="footer-copyright float-right py-3 text-muted small-text">Tags:
+            {% for tag in object.tags.all %}
+              <a href="/search/?q={{ tag.name }}"> #{{ tag.name }}</a>
+            {% endfor %}
+          </div>
+          <!-- Copyright -->
+              <div class="text-left">
+                 <span class="pointer">
+                    {% if request.user in post.likes.users.all%}
+                    <!-- already liked-->
+                    <a href='{% url "requirement_post_vote" pk=post.pk opition='like' %}'> <i
+                       data-toggle="tooltip" data-placement="bottom" title="Unlike"
+                       class="like fas fa-thumbs-up pr-2">
+                    <span>{{post.get_total_likes}}</span>
+                    </i>
+                    </a>
+                    {% else %}
+                    <!--not liked-->
+                    <a href="{% url 'requirement_post_vote' pk=post.pk opition='like' %}"><i
+                       data-toggle="tooltip" data-placement="bottom" title="Like"
+                       class="default-icon fas fa-thumbs-up pr-2">
+                    <span>{% if post.get_total_likes  %}{{post.get_total_likes}} {% else %} 0
+                    {% endif %}</span></i>
+                    </a>
+                    {% endif %}
+                 </span>
+                 <span class="ml-3 pointer">
+                 {% if request.user in post.dis_likes.users.all %}
+                 <a href="{% url 'requirement_post_vote' pk=post.pk opition='dis_like' %}"><i
+                    data-toggle="tooltip" data-placement="bottom" title="i dislike this"
+                    class="dislike fas fa-thumbs-down pr-2">
+                 <span>{{post.get_total_dis_likes}}</span></i>
+                 </a>
+                 {% else %}
+                 <a href="{% url 'requirement_post_vote' pk=post.pk opition='dis_like' %}"><i
+                    data-toggle="tooltip" data-placement="bottom" title="i dislike this "
+                    class="default-icon fas fa-thumbs-down pr-2">
+                 <span>{% if  post.get_total_dis_likes %}{{post.get_total_dis_likes}}
+                 {% else %} 0 {% endif %}</span></i>
+                 </a>
+                 {% endif %}
+                 </span>
+              </div>
+              <p class="text-right">{{post.au.first_name}}.
+                 {% if post.user == request.user  %}
+                 <span><a class="circle-card" href="{% url 'requirement_comment_update' post.pk %}"><i class="fas fa-edit"></a></span>
+                 {% endif %}
+              </p>
+        </footer>
     </div>
+
   </article>
+
+
+
+
 {% endblock content %}

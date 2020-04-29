@@ -12,6 +12,7 @@
     {{ form.media }}
     <link href='https://fonts.googleapis.com/css?family=Anton' rel='stylesheet'>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <link rel="stylesheet" href="{% static 'blog/main.css' %}">
   <body>
 
@@ -41,10 +42,6 @@
                 <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
                 <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
               {% endif %}
-              <div class="search-form ml-sm-2">
-                <form class="" action="{% url 'search-results' %}" method="get">
-                  <input type="text" name="q" id="id_q" class="form-control" placeholder="Search">
-                </form>
               </div>
             </div>
           </div>
@@ -54,7 +51,7 @@
 
     <main role="main" class="container ">
       <div class="row">
-        <div class="col-md-8 mt-4">
+        <div class="col-md-8 mt-2">
           {% if messages %}
             {% for message in messages %}
               <div class="alert alert-{{ message.tags }}">
@@ -64,20 +61,29 @@
           {% endif %}
           {% block content %}{% endblock %}
         </div>
-        <div class="col-md-4 mt-4">
-          <div class="content-section">
-            <h3>Our Sidebar</h3>
-            <p class='text-muted'>You can put any information here you'd like.
-              <ul class="list-group">
-                <li class="list-group-item list-group-item-light">Latest Posts</li>
-                <li class="list-group-item list-group-item-light">Announcements</li>
-                <li class="list-group-item list-group-item-light">Calendars</li>
-                <li class="list-group-item list-group-item-light">etc</li>
-              </ul>
-            </p>
-              <a class="btn btn-success btn-lg btn-block" name="button" href="{% url 'post-create' %}">Post Recipe!</a>
+
+        <div class="col-md-4">
+
+        <!-- Search Widget -->
+        <div class="card mt-2 ">
+          <h5 class="card-header">Search</h5>
+          <div class="card-body">
+            <span class="text-muted">Search for the recipe, user or tag you want!</span>
+            <div class="input-group mt-3">
+              <form class="search-form" action="{% url 'search-results' %}" method="get">
+                <input type="text" name="q" id="id_q" class="form-control" placeholder="Search">
+              </form>
+            </div>
           </div>
         </div>
+
+        <!-- Create Button -->
+        <div class="d-block">
+          <a class="btn btn-success btn-lg btn-block mt-4 mb-4" name="button" href="{% url 'post-create' %}">Post Recipe!</a>
+        </div>
+
+
+      </div>
       </div>
     </main>
 

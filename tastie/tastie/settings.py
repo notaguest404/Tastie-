@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'taggit',
     'easy_thumbnails',
-    'image_cropping'
 ]
 
 MIDDLEWARE = [
@@ -139,7 +138,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'tastietest@gmail.com' #not secure
-EMAIL_HOST_PASSWORD = 'tastieteste121' #not secure
+EMAIL_HOST_PASSWORD = 'tastie121testing' #not secure
 
 #settings to process images
 from easy_thumbnails.conf import Settings as thumbnail_settings

@@ -2,10 +2,17 @@ from django.db import models
 from django.utils import timezone #to implement location timezone
 from django.contrib.auth.models import User #User table inside django project
 from django.urls import reverse
-from .forms import DIF_CHOICES
 from django import forms
 from taggit.managers import TaggableManager
 from PIL import Image
+from django.conf import settings
+
+
+DIF_CHOICES =(
+    ("1", "Easy"),
+    ("2", "Intermediate"),
+    ("3", "Advanced")
+)
 
 class Post(models.Model):
 
@@ -24,6 +31,12 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+    def get_total_likes(self):
+        return self.likes.users.count()
+
+    def get_total_dis_likes(self):
+        return self.dis_likes.users.count()
+
     def get_absolute_url(self):
         return reverse('post-detail', kwargs={'pk': self.pk}) #return full path as string
 
@@ -36,3 +49,16 @@ class Post(models.Model):
             output_size = (1000, 1000)
             img.thumbnail(output_size)
             img.save(self.image.path) #save resized image
+
+class Like(models.Model):
+    ''' like  comment '''
+
+    post = models.OneToOneField(Post, related_name="likes", on_delete=models.CASCADE)
+    users = models.ManyToManyField(User, related_name='requirement_post_likes')
+
+
+class DisLike(models.Model):
+    ''' Dislike  comment '''
+
+    post = models.OneToOneField(Post, related_name="dis_likes", on_delete=models.CASCADE)
+    users = models.ManyToManyField(User, related_name='requirement_post_dis_likes')

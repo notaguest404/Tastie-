@@ -8,7 +8,7 @@ ul {
 }
 
 .bg-steel {
-  background-color: #64b32d;
+  background-color: #59c25b;
 }
 
 .logo{
@@ -112,6 +112,11 @@ ul {
   font-size: 2em;
 }
 
+.anton-font{
+  font-family: 'Anton';
+  font-size: 1.2em
+}
+
 .recipe-font{
   font-size:1.5em;
   font-family: 'Anton';
@@ -119,7 +124,7 @@ ul {
 }
 
 .search-form{
-  max-width: 350px;
+  max-width: 500px;
   width: 100%
 }
 
@@ -134,4 +139,22 @@ ul {
 }
 
 .post-image{
+  max-height: 400px;
+  width: 100%;
+}
+
+.feed-image{
+  max-height: 350px;
+
+}
+
+.small-text{
+  font-size: 0.9em;
+}
+
+.position-sticky{
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  height: 100%;
+  overflow-x: hidden; /* Disable horizontal scroll */
 }

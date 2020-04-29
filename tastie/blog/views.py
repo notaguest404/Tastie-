@@ -1,10 +1,10 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404, HttpResponseRedirect, reverse
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin #import nedded to require to the user be logged in and be the author to update or delete it
-from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView #class based view
-from .models import Post
+from django.views.generic import RedirectView,TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView, View #class based view
+from blog.models import Post, DisLike, Like
 from django.contrib.auth.models import User
 from django.db.models import Q
-from django.shortcuts import render
+from django.urls import reverse
 
 def home(request):
     context = {
@@ -14,7 +14,7 @@ def home(request):
 
 class PostListView(ListView):
     model = Post
-    paginate_by = 8
+    paginate_by = 5
     template_name = 'blog/home.html'
     context_object_name = 'posts'
     ordering = ['-date_posted'] #show new posts up in page
@@ -38,15 +38,13 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form): #overwrite form validation method
         form.instance.author = self.request.user #set author as logged in user
+        post = form.save(commit=False)
+        post.save()
         return super().form_valid(form)
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
     fields = ['title', 'content', 'difficulty', 'duration', 'servings', 'image', 'ingredients', 'method', 'tags']
-
-    def form_valid(self, form): #overwrite form validation method
-        form.instance.author = self.request.user #set author as logged in user
-        return super().form_valid(form)
 
     def test_func(self):
         post = self.get_object()
@@ -76,3 +74,45 @@ class SearchResultsView(ListView):
             Q(title__icontains=query) | Q(content__icontains=query) | Q(tags__slug__icontains=query) | Q(author__username__icontains=query)
         )
         return object_list.order_by('-date_posted')
+
+class UpdatePostVote(LoginRequiredMixin, View):
+    login_url = '/login/'
+    redirect_field_name = 'next'
+
+    def get(self, request, *args, **kwargs):
+
+        pk = self.kwargs.get('pk', None)
+        opition = self.kwargs.get('opition', None) # like or dislike button clicked
+
+        post = get_object_or_404(Post, id=pk)
+
+        try:
+            # If child DisLike model doesnot exit then create
+            post.dis_likes
+        except Post.dis_likes.RelatedObjectDoesNotExist as identifier:
+            DisLike.objects.create(post = post)
+
+        try:
+            # If child Like model doesnot exit then create
+            post.likes
+        except Post.likes.RelatedObjectDoesNotExist as identifier:
+            Like.objects.create(post = post)
+
+        if opition.lower() == 'like':
+
+            if request.user in post.likes.users.all():
+                post.likes.users.remove(request.user)
+            else:
+                post.likes.users.add(request.user)
+                post.dis_likes.users.remove(request.user)
+
+        elif opition.lower() == 'dis_like':
+
+            if request.user in post.dis_likes.users.all():
+                post.dis_likes.users.remove(request.user)
+            else:
+                post.dis_likes.users.add(request.user)
+                post.likes.users.remove(request.user)
+        else:
+            return redirect('post-detail', pk=pk)
+        return redirect('post-detail', pk=pk)

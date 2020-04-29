@@ -2,28 +2,16 @@
 {% load crispy_forms_tags %}
 {% block content %}
     <div class="content-section">
-      <form method="POST">
+      <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <fieldset class="form-group">
           <legend class="border-bottom mb-4">
             Recipe Post
           </legend>
-          <div id="div_id_title" class="form-group"> <label for="id_title" class=" requiredField">
-                          Title<span class="asteriskField">*</span> </label> <div class=""> <input type="text" name="title" maxlength="100" class="textinput textInput form-control" required="" id="id_title"> </div> </div> <div id="div_id_content" class="form-group"> <label for="id_content" class=" requiredField">
-                          Content<span class="asteriskField">*</span> </label> <div class=""> <input type="text" name="content" value="Small Description" maxlength="200" class="textinput textInput form-control" required="" id="id_content"> </div> </div> <div id="div_id_difficulty" class="form-group"> <label for="id_difficulty" class=" requiredField">
-                          Difficulty<span class="asteriskField">*</span> </label> <div class=""> <select name="difficulty" class="select form-control" id="id_difficulty"> <option value="1">Easy</option> <option value="2" selected="">Intermediate</option> <option value="3">Advanced</option>
-
-          </select> </div> </div> <div id="div_id_duration" class="form-group"> <label for="id_duration" class=" requiredField">
-                          Duration<span class="asteriskField">*</span> </label> <div class=""> <input type="text" name="duration" value="00:30" maxlength="5" class="textinput textInput form-control" required="" id="id_duration"> </div> </div> <div id="div_id_servings" class="form-group"> <label for="id_servings" class=" requiredField">
-                          Servings<span class="asteriskField">*</span> </label> <div class=""> <input type="text" name="servings" value="4" maxlength="2" class="textinput textInput form-control" required="" id="id_servings"> </div> </div> <div id="div_id_image" class="form-group"> <label for="id_image" class=" requiredField">
-                          Image<span class="asteriskField">*</span> </label> <div class=""> <input type="file" name="image" accept="image/*" class="clearablefileinput form-control-file" id="id_image"> </div> </div> <div id="div_id_ingredients" class="form-group"> <label for="id_ingredients" class=" requiredField">
-                          Ingredients<span class="asteriskField">*</span> </label> <div class=""> <textarea name="ingredients" cols="40" rows="10" class="textarea form-control" required="" id="id_ingredients">Ingredients</textarea> </div> </div> <div id="div_id_method" class="form-group"> <label for="id_method" class=" requiredField">
-                          Method<span class="asteriskField">*</span> </label> <div class=""> <textarea name="method" cols="40" rows="10" class="textarea form-control" required="" id="id_method">Method</textarea> </div> </div> <div id="div_id_tags" class="form-group"> <label for="id_tags" class="">
-                          Tags
-                      </label> <div class=""> <input type="text" name="tags" class="tagwidget form-control" data-role="tagsinput" id="id_tags"> </div> </div>
+          {{ form|crispy }}
         </fieldset>
         <div class="form-group">
-          <button class="btn btn-success btn-lg btn-block" type="submit" name="button">Post!</button>
+          <button class="btn btn-success btn-lg btn-block" type="submit" name="button">Upload!</button>
         </div>
       </form>
     </div>

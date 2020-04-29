@@ -4,19 +4,30 @@
   <div class="infinite-container">
     {% for post in posts %}
       <div class="infinite-item">
-        <article class="media content-section">
-          <img class="rounded-circle article-img"src="{{ post.author.profile.image.url }}" alt="Profile Pic">
-          <div class="media-body">
-            <div class="article-metadata">
-              <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
-              <small class="text-muted">{{ post.date_posted|date:"d/m/Y G:i" }}</small>
-            </div>
-            <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
+        <div class="card mb-4">
+          <div class="media m-0 mt-3">
+        	  <div class="d-flex mr-3">
+        			<a href="{% url 'post-detail' post.id %}"><img class="rounded-circle article-img ml-4 mr-1"src="{{ post.author.profile.image.url }}" alt="Profile Pic"></a>
+        		</div>
+        		<div class="media-body">
+        		  <p class="m-0 mt-2 anton-font"><a href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a></p>
+        		  <span class="text-muted small-text">Posted: {{ post.date_posted|date:"d/m/Y G:i" }}</span>
+        	  </div>
           </div>
-        </article>
+          <hr>
+          <div class="card-body">
+            <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
+            <p class="lead text-muted text-justify small-text mt-2 mb-3">Description: {{post.content}}</p>
+            <a href="{% url 'post-detail' post.id %}"><img class="card-img-top rounded mt-2 mb-3" src="{{ post.image.url }}" alt="Card image cap"></a>
+          </div>
+        </div>
       </div>
     {% endfor %}
   </div>
+
+
+
+
 
   {% if page_obj.has_next %}
     <a class="infinite-more-link" href="?page={{ page_obj.next_page_number }}"></a>
