@@ -28,8 +28,10 @@
               <a class="nav-item nav-link" href="{% url 'blog-home' %}">Feed</a>
               {% if user.is_authenticated %}
                 <a class="nav-item nav-link" href="{% url 'user-posts' user.username %}">My Recipes</a>
+                <a class="nav-item nav-link" href="{% url 'favourites' user.username %}">Favourites</a>
               {% else %}
                 <a class="nav-item nav-link" href="{% url 'login' %}">My Recipes</a>
+                <a class="nav-item nav-link" href="{% url 'login' %}">Favourites</a>
               {% endif %}
 
             </div>

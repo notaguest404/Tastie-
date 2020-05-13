@@ -5,6 +5,9 @@ from blog.models import Post, DisLike, Like
 from django.contrib.auth.models import User
 from django.db.models import Q
 from django.urls import reverse
+from .forms import CommentForm
+from .models import Post, Comment
+from django.contrib.auth.decorators import login_required
 
 def home(request):
     context = {
@@ -18,6 +21,16 @@ class PostListView(ListView):
     template_name = 'blog/home.html'
     context_object_name = 'posts'
     ordering = ['-date_posted'] #show new posts up in page
+
+class PostFavouriteListView(ListView):
+    model = Post
+    paginate_by = 5
+    template_name = 'blog/favourite.html'
+    context_object_name = 'posts'
+
+    def get_queryset(self):
+        user = get_object_or_404(User, username =self.kwargs.get('username')) #prevent access to unable profiles
+        return Post.objects.order_by('title') #order posts by most recents
 
 class UserPostListView(ListView):
     model = Post
@@ -116,3 +129,29 @@ class UpdatePostVote(LoginRequiredMixin, View):
         else:
             return redirect('post-detail', pk=pk)
         return redirect('post-detail', pk=pk)
+
+def add_comment_to_post(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    if request.method == "POST":
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            form.instance.author = request.user
+            comment.post = post
+            comment.save()
+            return redirect('post-detail', pk=post.pk)
+    else:
+        form = CommentForm()
+    return render(request, 'blog/add_comment_to_post.html', {'form': form})
+
+@login_required
+def comment_approve(request, pk):
+    comment = get_object_or_404(Comment, pk=pk)
+    comment.approve()
+    return redirect('post-detail', pk=comment.post.pk)
+
+@login_required
+def comment_remove(request, pk):
+    comment = get_object_or_404(Comment, pk=pk)
+    comment.delete()
+    return redirect('post-detail', pk=comment.post.pk)

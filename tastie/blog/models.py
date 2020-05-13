@@ -37,6 +37,9 @@ class Post(models.Model):
     def get_total_dis_likes(self):
         return self.dis_likes.users.count()
 
+    def get_likes(self):
+        return self.likes
+
     def get_absolute_url(self):
         return reverse('post-detail', kwargs={'pk': self.pk}) #return full path as string
 
@@ -50,11 +53,15 @@ class Post(models.Model):
             img.thumbnail(output_size)
             img.save(self.image.path) #save resized image
 
+    def approved_comments(self):
+        return self.comments.filter(approved_comment=True)
+
 class Like(models.Model):
     ''' like  comment '''
 
     post = models.OneToOneField(Post, related_name="likes", on_delete=models.CASCADE)
     users = models.ManyToManyField(User, related_name='requirement_post_likes')
+    date_liked = models.DateTimeField(default=timezone.now)
 
 
 class DisLike(models.Model):
@@ -62,3 +69,17 @@ class DisLike(models.Model):
 
     post = models.OneToOneField(Post, related_name="dis_likes", on_delete=models.CASCADE)
     users = models.ManyToManyField(User, related_name='requirement_post_dis_likes')
+
+class Comment(models.Model):
+    post = models.ForeignKey('blog.Post', on_delete=models.CASCADE, related_name='comments')
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    text = models.TextField()
+    created_date = models.DateTimeField(default=timezone.now)
+    approved_comment = models.BooleanField(default=False)
+
+    def approve(self):
+        self.approved_comment = True
+        self.save()
+
+    def __str__(self):
+        return self.text

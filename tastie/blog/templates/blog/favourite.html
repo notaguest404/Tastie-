@@ -3,6 +3,7 @@
 {% block content %}
   <div class="infinite-container">
     {% for post in posts %}
+    {% if request.user in post.likes.users.all%}
       <div class="infinite-item">
         <div class="card mb-4">
           <div class="media m-0 mt-3">
@@ -23,6 +24,7 @@
           </div>
         </div>
       </div>
+      {% endif %}
     {% endfor %}
   </div>
 

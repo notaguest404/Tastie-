@@ -158,3 +158,13 @@ ul {
   height: 100%;
   overflow-x: hidden; /* Disable horizontal scroll */
 }
+
+
+.comment-wrapper .panel-body {
+    max-height:650px;
+}
+
+.comment-wrapper .media-list .media {
+    border-bottom:1px #efefef;
+    margin-bottom:25px;
+}
