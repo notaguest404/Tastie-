@@ -15,7 +15,9 @@ Our Approach:
 
 ## Architecture
 Front-End - Bootstrasp, Javascript, CSS.
+
 Documentation - Photoshop, ...
+
 Back-End - Django, Javascrip
 
 ## Installation
