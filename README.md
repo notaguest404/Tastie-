@@ -1,6 +1,6 @@
 # Tastie!
 
-Tastie! is a website about Recipes &amp; Food Appreciation. The objective of the Recipe site is to help the user manage recipes in a way that will make them easyto follow.
+Tastie! is a website about Recipes &amp; Food Appreciation. The objective of the Recipe site is to help the user manage recipes in a way that will make them easy to follow.
 
 Our Approach:
 
