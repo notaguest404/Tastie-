@@ -16,14 +16,19 @@ Our Approach:
 ## Architecture
 Front-End - Bootstrasp, Javascript, CSS.
 
-Documentation - Photoshop, ...
+Documentation - Photoshop, Github, .docx Files
 
 Back-End - Django, Javascrip
 
 ## Requirements
 
+- Browser
+- Text Editor
+- Python
 - Virtualenv
 - Django
+
+There's no specific hardware requirements.
 
 
 ## Installation
@@ -97,9 +102,11 @@ Move your project details to the virtualenv directory:
 
 - After runserver open localhost port in browser
 
+To see a more complete tutorial, click [here] (https://hostadvice.com/how-to/how-to-create-a-virtual-environment-for-your-django-projects-using-virtualenv/).
 
 ## Usage
-The application is inteded to be used inside a default or mobile browser.
+
+The application is intended to be used inside a default or mobile browser.
 
 ## Credits
 Project done by notaguest404 (Bruno Matos A035468), Marcoafnunes (Marco Nunes A035335) and Mae1920 (Ema Silva A027823), under the guidance of alina-trifan.
