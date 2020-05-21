@@ -21,6 +21,9 @@ Documentation - Photoshop, ...
 Back-End - Django, Javascrip
 
 ## Installation
+###Set Virtual environment:
+    pip3 install virtualenv
+    which virtualenv
 Deploy code to a virtual enviroment.
 
 ## Usage
