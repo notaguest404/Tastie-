@@ -1,5 +1,5 @@
 # Tastie!
-
+![Image of chef](https://lh3.googleusercontent.com/proxy/iYrCnq6KhZFbwtcBm8dsvkqihsyOLY5wxytuoJX-EF1WgRjZ5tDKBEubtezlh-P8m9asAflDAbpyQib11CgoJBtHALFaWGZeFlErmFIcL5YoE15aoMDuA_6tL3FFQDzE2kmO)
 Tastie! is a website about Recipes &amp; Food Appreciation. The objective of the Recipe site is to help the user manage recipes in a way that will make them easy to follow.
 
 Our Approach:
