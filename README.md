@@ -103,7 +103,7 @@ Move your project details to the virtualenv directory:
 
 - After runserver open localhost port in browser
 
-To see a more complete tutorial, click [here] (https://hostadvice.com/how-to/how-to-create-a-virtual-environment-for-your-django-projects-using-virtualenv/).
+To see a more complete tutorial, click [here](https://hostadvice.com/how-to/how-to-create-a-virtual-environment-for-your-django-projects-using-virtualenv/).
 
 ## Usage
 
