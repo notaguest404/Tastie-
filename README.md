@@ -58,6 +58,7 @@ Activate your virtual environment by typing:
     [server]$ source my_project/bin/activate
     (my_project) [server]$
  
+ 
 #### Installing Django on Virtualenv
 
     sudo apt-get install python-pip python-dev
@@ -78,31 +79,18 @@ Create and activate your virtual environment:
 Move your project details to the virtualenv directory:
 
     pip install requirements.txt
-    
-#### Creating a new Django Project on Virtualenv
+  
+#### To Finish you should...
 
-Create your project on Django:
+- Clone Repository
+- Extract tastie folder to your virtual enviroment
 
-    [server]$ cd $HOME/example.com
-    [server]$ source $HOME/example.com/my_project/bin/activate
-    (my_project) [server]$ python my_project/bin/django-admin.py startproject <projectname>
-    
-    import sys, os
-    INTERP = "/home/<username>/local/bin/python"
-    #INTERP is present twice so that the new python interpreter
-    #knows the actual executable path
-    if sys.executable != INTERP: os.execl(INTERP, INTERP, *sys.argv)
+        python manage.py makemigrations
+        python manage.py migrate
+        python manage.py runserver
 
-    cwd = os.getcwd()
-    sys.path.append(cwd)
-    sys.path.append(cwd + '/djangoprojectname')  #You must add your project here
+- Open project folder with your localhost
 
-    sys.path.insert(0,cwd+'/my_project/bin')
-    sys.path.insert(0,cwd+'/my_project/lib/python2.7/site-packages')
-
-    os.environ['DJANGO_SETTINGS_MODULE'] = "djangoprojectname.settings"
-    from django.core.wsgi import get_wsgi_application
-    application = get_wsgi_application()
 
 ## Usage
 The application is inteded to be used inside a default or mobile browser.
