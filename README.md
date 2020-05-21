@@ -20,6 +20,12 @@ Documentation - Photoshop, ...
 
 Back-End - Django, Javascrip
 
+## Requirements
+
+- Virtualenv
+- Django
+
+
 ## Installation
 Before installing **Django**, it’s recommended to install **Virtualenv**.
 Use pip3 to install Virtualenv:
@@ -89,14 +95,14 @@ Move your project details to the virtualenv directory:
         python manage.py migrate
         python manage.py runserver
 
-- Open project folder with your localhost
+- After runserver open localhost port in browser
 
 
 ## Usage
 The application is inteded to be used inside a default or mobile browser.
 
 ## Credits
-Project done by notaguest404, Marcoafnunes and Mae1920, under the guidance of alina-trifan.
+Project done by notaguest404 (Bruno Matos A035468), Marcoafnunes (Marco Nunes A035335) and Mae1920 (Ema Silva A027823), under the guidance of alina-trifan.
 
 ## License 
 This project is a school project. You cannot modify or redistribute this code without explicit permission from the owners.
