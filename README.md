@@ -1,5 +1,5 @@
 # Tastie!
-![Image of Rat](https://3.bp.blogspot.com/-lOETRgH8ky0/ULjmzL_L87I/AAAAAAAAF5E/X3jtbbvx3CE/s1600/Render+Ratatouille+-+Premium+Design+3D+(1).png)
+
 Tastie! is a website about Recipes &amp; Food Appreciation. The objective of the Recipe site is to help the user manage recipes in a way that will make them easy to follow.
 
 Our Approach:
