@@ -19,7 +19,7 @@ Front-End - Bootstrasp, Javascript, CSS.
 
 Documentation - Photoshop, Github, .docx Files
 
-Back-End - Django, Javascrip
+Back-End - Django, Javascript
 
 ## Requirements
 
