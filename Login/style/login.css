@@ -10,8 +10,17 @@ html,body{
 *{
     box-sizing: border-box;
 }
-
-  
+#title{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#logo{
+    width: 60px;
+    height: 55px;
+  }
+#text{
+    font-size: 10px;
+    color: grey;
+}
 .tableContainerClass{
     width: 100%;
     height: 100%;
@@ -19,10 +28,14 @@ html,body{
     border-spacing: 0;
 }
 
+.bg-steel {
+    background-color: #81beca;
+  }
+  
 /*----------------Login - Esquerda----------------*/
 .backgroundContainer{
     position: static;
-    width: 50%;
+    width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -30,7 +43,7 @@ html,body{
 }
 .loginBackgroundPic{
   min-height: 100%;
-  width: 50%;
+  width: 100%;
   height: auto;
   position: fixed;
   top: 0;
@@ -39,8 +52,8 @@ html,body{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.459);
 }
 .loginBox{
-    width: 350px;
-    height: 360px;
+    width: 500px;
+    height: 535px;
     margin: auto;
     position: relative;
     background-color: rgb(255, 255, 255);
@@ -60,7 +73,7 @@ input[type=text], input[type=password] {
 
 /* Set a style for all buttons */
 .loginButton {
-    background-color: rgb(255, 61, 61);
+    background-color: #66cc00;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -70,6 +83,7 @@ input[type=text], input[type=password] {
     padding-top: 16px;
     border-radius: 2ex;
     font-weight: bolder;
+    margin-top: 25px;
 }
 
 /* Add a hover effect for buttons */
@@ -92,7 +106,7 @@ span.psw {
     bottom: 0;
     width: 50%;
     height: auto;
-    background-color: #9c0e21;
+    background-color: #769ea2;
     color: white;
     text-align: center;
 }
@@ -113,7 +127,7 @@ span.psw {
     height: 90%;
     margin: 0;
     padding: 0;
-    background-color: rgb(128, 255, 128);
+    background-color: #f9f2ec;
 }
 .rightBox{
     width: 350px;
@@ -129,7 +143,7 @@ span.psw {
 }
 .registerbtn{
     margin-left: 10%;
-    background-color: rgb(255, 61, 61);
+    background-color: #99ddff;
     width: 15ex;
     height: 6ex;
     border-radius: 2ex;
@@ -151,7 +165,7 @@ span.psw {
 }
 .discoverbtn{
     margin-left: 11%;
-    background-color: rgb(255, 61, 61);
+    background-color: #99ddff;
     width: 15ex;
     height: 6ex;
     border-radius: 2ex;
