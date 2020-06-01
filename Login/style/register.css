@@ -1,40 +1,39 @@
 html,body{
-    height: 100%;
-    max-height: 100%;
-    max-width: 100%;
-    width: 100%;
-    padding: 0;
-    margin: 0;
+  height: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }
+
 *{
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
+#title{
+  font-family: Impact, Charcoal, sans-serif;
+  font-size: 50px;
+}
+#logo{
+  width: 60px;
+  height: 55px;
+}
+#text{
+  font-size: 10px;
+  color: grey;
+}
+
 .bg-steel {
-    background-color: #81beca;
-  }
-  
-  #logo{
-    width: 55x;
-    height: 55px;
-  }
-  .nabvar{
-    font-family: "Butcherman", serif;
-  }
-
-  .site-header .navbar-nav .nav-link.active {
-    font-weight: 400;
-  }
-  #text{
-    font-size: small;
-  }
-.tableContainerClass{
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    border-spacing: 0;
+  background-color: #81beca;
 }
 
-/*----------------Login - Esquerda----------------*/
+.tableContainerClass{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-spacing: 0;
+}
+
 .backgroundContainer{
     position: static;
     width: 100%;
@@ -105,40 +104,15 @@ span.psw {
 }
 
 
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-    display: block;
-    float: none;
-  }
-}
-
 /*-----------------------------------------------------*/
 @media only screen and (max-width: 600px) {
-    body{
-        background-color: rgb(15, 24, 53);
-    }
-    .backgroundContainer{
-    display: table-row;
-    }
-    .registerContainer{
-    display: table-row;
-    }
-    .registerBox{
-        border-radius: 0;
-    }
-    .registerBackgroundPic{
-        display: none;
-    }
-    .loginContainer{
-        width: 100%;
-        height: 200%;
-        margin: 20%;
-        padding: 20%;
-        background-color: rgb(7, 39, 58);
-    }
-    span.psw {
-        display: block;
-        float: none;
-      }
+  .registerBox{
+    width: 300px;
+    height: 740px;
+    margin-top: 30%;
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    border-radius: 2%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.219), 4px 0 8px 0 rgba(0, 0, 0, 0.212);
+}
   }

@@ -11,7 +11,8 @@ html,body{
     box-sizing: border-box;
 }
 #title{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 50px;
 }
 #logo{
     width: 60px;
@@ -21,18 +22,18 @@ html,body{
     font-size: 10px;
     color: grey;
 }
+
+.bg-steel {
+    background-color: #81beca;
+  }
+
 .tableContainerClass{
     width: 100%;
     height: 100%;
     margin: 0;
     border-spacing: 0;
-}
+} 
 
-.bg-steel {
-    background-color: #81beca;
-  }
-  
-/*----------------Login - Esquerda----------------*/
 .backgroundContainer{
     position: static;
     width: 100%;
@@ -61,7 +62,7 @@ html,body{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.219), 4px 0 8px 0 rgba(0, 0, 0, 0.212);
 }
 
-/* Full-width inputs */
+
 input[type=text], input[type=password] {
     width: 100%;
     padding: 12px 20px;
@@ -71,7 +72,6 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
 }
 
-/* Set a style for all buttons */
 .loginButton {
     background-color: #66cc00;
     color: white;
@@ -86,139 +86,30 @@ input[type=text], input[type=password] {
     margin-top: 25px;
 }
 
-/* Add a hover effect for buttons */
 button:hover {
     opacity: 0.8;
 }
 
-/* Add padding and style to containers */
 .container {
     padding: 16px;
 }
-/* The "Forgot password" text */
+
 span.psw {
     float: right;
     padding-right: 16px;
 }
 
-.footer{
-    position: fixed;
-    bottom: 0;
-    width: 50%;
-    height: auto;
-    background-color: #769ea2;
-    color: white;
-    text-align: center;
-}
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-    display: block;
-    float: none;
-  }
-}
-/*-----------------------------------------------------*/
-
-/*--------------------Join - Direita------------------*/
-.loginContainer{
-
-    width: 50%;
-    height: 90%;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f2ec;
-}
-.rightBox{
-    width: 350px;
-    height: 300px;
-    margin: auto;
-    position: relative;
-}
-.siteText{
-    padding-top: 2.5ex;
-    color: rgb(255, 255, 230);
-    text-align: justify;
-    padding-bottom: 2.5ex;
-}
-.registerbtn{
-    margin-left: 10%;
-    background-color: #99ddff;
-    width: 15ex;
-    height: 6ex;
-    border-radius: 2ex;
-    max-width: 85%;
-    cursor: pointer;
-    color: rgb(255, 255, 255);
-    border: none;
-    font-weight: bolder;
-}
-#joinButtonText{
-    font-size: 2em;
-    margin: auto;
-    font-weight: bolder;
-}
-.tastieLogo{
-    width: 200px;
-    height: auto;
-    margin-left: 21%;
-}
-.discoverbtn{
-    margin-left: 11%;
-    background-color: #99ddff;
-    width: 15ex;
-    height: 6ex;
-    border-radius: 2ex;
-    max-width: 85%;
-    cursor: pointer;
-    color: rgb(255, 255, 255);
-    border: none;
-    font-weight: bolder;
-}
-
 
 /*-----------------------------------------------------*/
-@media only screen and (max-width: 600px) {
-    body{
-        background-color: rgb(15, 24, 53);
-    }
-    .backgroundContainer{
-    display: table-row;
-    }
-    .loginContainer{
-    display: table-row;
-    }
-    .loginBox{
-        border-radius: 0;
-    }
-    .loginBackgroundPic{
-        display: none;
-    }
-    .loginContainer{
-        width: 800px;
-        height: 400px;
-        margin: 20%;
-        padding: 20%;
-        background-color: rgb(128, 255, 128);
-    }
-    span.psw {
-        display: block;
-        float: none;
-      }
-      
-      .footer{
-        height: 7%;
-        text-align: center;
-        display: inline-block ;
-        width: 100%;
-      }
+@media only screen and (max-width: 600px) {     
       .loginBox{
-        width: 300px;
-        height: 360px;
-        margin: auto;
+        width: 310px;
+        height: 555px;
+        margin-top: 30%;
         position: relative;
         background-color: rgb(255, 255, 255);
         border-radius: 2%;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.219), 4px 0 8px 0 rgba(0, 0, 0, 0.212);
     }
-  }
+}
+  
