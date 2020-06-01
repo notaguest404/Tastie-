@@ -14,148 +14,147 @@
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
-            <div class="container">
-            <img id="logo" src="images/logoyellow1.png">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarToggle">
-                <div class="navbar-nav mr-auto">
-                <a class="nav-item nav-link" href="#">Feed</a>
-                    <a class="nav-item nav-link" href="#">My Recipes</a>
-                </div>
-                <!-- Navbar Right Side -->
-                  <div class="navbar-nav">
-                      <a class="nav-item nav-link" href="#">Login</a>
-                      <a class="nav-item nav-link">|</a>
-                      <a class="nav-item nav-link"href="#">Register</a>
-                  </div>
-                </div>
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+      <div class="container">
+      <img id="logo" src="images/logoyellow2.png">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarToggle">
+          <div class="navbar-nav mr-auto">
+          <a class="nav-item nav-link" href="#">Feed</a>
+              <a class="nav-item nav-link" href="#">My Recipes</a>
+          </div>
+          <!-- Navbar Right Side -->
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="#">Login</a>
+                <a class="nav-item nav-link">|</a>
+                <a class="nav-item nav-link"href="#">Register</a>
             </div>
-        </nav>
-    </header>
-    <br>
-<div class="container">
-<div class="row flex-lg-nowrap">
-  <div class="col">
-    <div class="row">
-      <div class="col mb-3">
-        <div class="card">
-          <div class="card-body">
-            <div class="e-profile">
-              <div class="row">
-                <div class="col-12 col-sm-auto mb-3">
-                  <div class="mx-auto" style="width: 140px;">
-                    <div class="d-flex justify-content-center align-items-center rounded" style="height: 140px; background-color: rgb(233, 236, 239);">
-                      <img src="images/perfil.jpg">
+          </div>
+      </div>
+  </nav>
+  </header>
+  <br>
+  <div class="container">
+    <div class="row flex-lg-nowrap">
+      <div class="col">
+        <div class="row">
+          <div class="col mb-3">
+            <div class="card">
+              <div class="card-body">
+                <div class="e-profile">
+                  <div class="row">
+                    <div class="col-12 col-sm-auto mb-3">
+                      <div class="mx-auto" style="width: 140px;">
+                        <div class="d-flex justify-content-center align-items-center rounded">
+                          <img src="images/perfil.jpg">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
+                      <div class="text-center text-sm-left mb-2 mb-sm-0">
+                        <h id="title" class="pt-sm-2 pb-1 mb-0 text-nowrap">Marco Nunes</h>
+                        <p class="mb-0"><a href="#">@marco</a></p>
+                        <div class="mt-2">
+                          <button class="btn btn-primary" type="button">
+                            <i class="fa fa-fw fa-camera"></i>
+                            <span>Change Photo</span>
+                          </button>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
-                  <div class="text-center text-sm-left mb-2 mb-sm-0">
-                    <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">Marco Nunes</h4>
-                    <p class="mb-0">@marco</p>
-                    <div class="mt-2">
-                      <button class="btn btn-primary" type="button">
-                        <i class="fa fa-fw fa-camera"></i>
-                        <span>Change Photo</span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <ul class="nav nav-tabs">
-                <li class="nav-item"><a href="" class="active nav-link">Settings</a></li>
-              </ul>
-              <div class="tab-content pt-3">
-                <div class="tab-pane active">
-                  <form class="form" novalidate="">
-                    <div class="row">
-                      <div class="col">
+                  <ul class="nav nav-tabs">
+                    <li class="nav-item"><a class="active nav-link" id="settings">Settings</a></li>
+                  </ul>
+                  <div class="tab-content pt-3">
+                    <div class="tab-pane active">
+                      <form class="form" novalidate="">
                         <div class="row">
                           <div class="col">
-                            <div class="form-group">
-                              <label>Full Name</label>
-                              <input class="form-control" type="text" name="name">
+                            <div class="row">
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Full Name</label>
+                                  <input class="form-control" type="text" name="name">
+                                </div>
+                              </div>
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Username</label>
+                                  <input class="form-control" type="text" name="username">
+                                </div>
+                              </div>
                             </div>
-                          </div>
-                          <div class="col">
-                            <div class="form-group">
-                              <label>Username</label>
-                              <input class="form-control" type="text" name="username"">
+                            <div class="row">
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Email</label>
+                                  <input class="form-control" type="text">
+                                </div>
+                              </div>
                             </div>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col">
-                            <div class="form-group">
-                              <label>Email</label>
-                              <input class="form-control" type="text">
+                            <div class="row">
+                              <div class="col mb-3">
+                                <div class="form-group">
+                                  <label>Bio</label>
+                                  <textarea class="form-control" rows="5"></textarea>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
                         <div class="row">
-                          <div class="col mb-3">
-                            <div class="form-group">
-                              <label>Bio</label>
-                              <textarea class="form-control" rows="5"></textarea>
+                          <div class="col-12 col-sm-6 mb-3">
+                            <div class="mb-2"><b>Change Password</b></div>
+                            <div class="row">
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Current Password</label>
+                                  <input class="form-control" type="password" placeholder="••••••">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>New Password</label>
+                                  <input class="form-control" type="password" placeholder="••••••">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Confirm <span class="d-none d-xl-inline">Password</span></label>
+                                  <input class="form-control" type="password" placeholder="••••••"></div>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-12 col-sm-6 mb-3">
-                        <div class="mb-2"><b>Change Password</b></div>
-                        <div class="row">
-                          <div class="col">
-                            <div class="form-group">
-                              <label>Current Password</label>
-                              <input class="form-control" type="password" placeholder="••••••">
-                            </div>
+                          <div class="col-12 col-sm-5 offset-sm-1 mb-3">
                           </div>
                         </div>
                         <div class="row">
-                          <div class="col">
-                            <div class="form-group">
-                              <label>New Password</label>
-                              <input class="form-control" type="password" placeholder="••••••">
-                            </div>
+                          <div class="col d-flex justify-content-end">
+                            <button class="btn btn-primary" type="submit">Save Changes</button>
                           </div>
                         </div>
-                        <div class="row">
-                          <div class="col">
-                            <div class="form-group">
-                              <label>Confirm <span class="d-none d-xl-inline">Password</span></label>
-                              <input class="form-control" type="password" placeholder="••••••"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-12 col-sm-5 offset-sm-1 mb-3">
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col d-flex justify-content-end">
-                        <button class="btn btn-primary" type="submit">Save Changes</button>
-                      </div>
-                    </div>
-                  </form>
+                      </form>
 
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          <div class="col-12 col-md-3 mb-3">
+          </div>
         </div>
       </div>
-      <div class="col-12 col-md-3 mb-3">
-      </div>
     </div>
-
   </div>
-</div>
-</div>
     <link
         rel="stylesheet"
         href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"

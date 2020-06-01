@@ -71,3 +71,11 @@ body {
     right: 0;
     top: 0;
 }
+
+#title{
+  font-family: Impact, Charcoal, sans-serif;
+  color: red;
+  font-size: 30px;
+  margin-top: 20px;
+  margin-left: 40px;
+}

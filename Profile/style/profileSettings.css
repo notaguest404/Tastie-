@@ -24,9 +24,6 @@ body {
     height: 40px;
     border-radius: 5px;
   }
-  .page-footer{
-    background-color: #9c0e21;
-  }
   .footer-copyright{
     color: white;
   }
@@ -38,4 +35,13 @@ body {
   body{
     margin-top:20px;
     background:#f8f8f8
+}
+
+#settings{
+  color: rgb(6, 69, 187);
+}
+
+#title{
+  font-family: Impact, Charcoal, sans-serif;
+  font-size: 30px;
 }
