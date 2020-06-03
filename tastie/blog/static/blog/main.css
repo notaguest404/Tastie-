@@ -8,12 +8,14 @@ ul {
 }
 
 .bg-steel {
-  background-color: #59c25b;
+  background-color: #99ddff;
 }
 
 .logo{
   font-family: 'Anton';
-  font-size: 25px;
+  font-size: 28px;
+
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 
 .site-header .navbar-nav .nav-link {
@@ -22,7 +24,7 @@ ul {
 }
 
 .site-header .navbar-nav .nav-link:hover {
-  color: #db2e2e;
+  color: #ffc107;
 }
 
 .site-header .navbar-nav .nav-link.active {
@@ -124,7 +126,7 @@ ul {
 }
 
 .search-form{
-  max-width: 500px;
+  max-width: 200px;
   width: 100%
 }
 
@@ -167,4 +169,36 @@ ul {
 .comment-wrapper .media-list .media {
     border-bottom:1px #efefef;
     margin-bottom:25px;
+}
+
+.lightblue{
+  color: #81beca;
+}
+.loginBackgroundPic{
+  min-height: 100%;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.459);
+}
+
+.backgroundContainer{
+    position: static;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+.loginBox{
+    width: 500px;
+    height: 535px;
+    margin: auto;
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    border-radius: 2%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.219), 4px 0 8px 0 rgba(0, 0, 0, 0.212);
 }

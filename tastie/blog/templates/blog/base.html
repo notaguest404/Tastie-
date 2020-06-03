@@ -19,24 +19,30 @@
     <header class="site-header">
       <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
         <div class="container">
-          <a class="logo navbar-brand mr-4" href="/"> TASTIE! </a>
+          <a class="logo text-warning navbar-brand mr-4" href="/"> TASTIE! </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarToggle">
-            <div class="navbar-nav mr-auto">
+            <div class="navbar-nav">
               <a class="nav-item nav-link" href="{% url 'blog-home' %}">Feed</a>
+              <a class="nav-item nav-link" href="{% url 'post-create' %}">Post!</a>
               {% if user.is_authenticated %}
                 <a class="nav-item nav-link" href="{% url 'user-posts' user.username %}">My Recipes</a>
                 <a class="nav-item nav-link" href="{% url 'favourites' user.username %}">Favourites</a>
               {% else %}
                 <a class="nav-item nav-link" href="{% url 'login' %}">My Recipes</a>
                 <a class="nav-item nav-link" href="{% url 'login' %}">Favourites</a>
+
               {% endif %}
 
             </div>
+
             <!-- Navbar Right Side -->
-            <div class="navbar-nav">
+            <div class="navbar-nav ml-auto">
+              <form class="search-form mr-5" action="{% url 'search-results' %}" method="get">
+                <input type="text" name="q" id="id_q" class="form-control" placeholder="Search">
+              </form>
               {% if user.is_authenticated %}
                 <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
                 <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
@@ -53,6 +59,7 @@
 
     <main role="main" class="container ">
       <div class="row">
+        <div class="col-md-2"></div>
         <div class="col-md-8 mt-2">
           {% if messages %}
             {% for message in messages %}
@@ -64,28 +71,7 @@
           {% block content %}{% endblock %}
         </div>
 
-        <div class="col-md-4">
-
-        <!-- Search Widget -->
-        <div class="card mt-2 ">
-          <h5 class="card-header">Search</h5>
-          <div class="card-body">
-            <span class="text-muted">Search for the recipe, user or tag you want!</span>
-            <div class="input-group mt-3">
-              <form class="search-form" action="{% url 'search-results' %}" method="get">
-                <input type="text" name="q" id="id_q" class="form-control" placeholder="Search">
-              </form>
-            </div>
-          </div>
-        </div>
-
-        <!-- Create Button -->
-        <div class="d-block">
-          <a class="btn btn-success btn-lg btn-block mt-4 mb-4" name="button" href="{% url 'post-create' %}">Post Recipe!</a>
-        </div>
-
-
-      </div>
+        <div class="col-md-2"></div>
       </div>
     </main>
 

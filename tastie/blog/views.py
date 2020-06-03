@@ -20,7 +20,7 @@ class PostListView(ListView):
     paginate_by = 5
     template_name = 'blog/home.html'
     context_object_name = 'posts'
-    ordering = ['-date_posted'] #show new posts up in page
+    ordering = ['likes'] #show new posts up in page
 
 class PostFavouriteListView(ListView):
     model = Post

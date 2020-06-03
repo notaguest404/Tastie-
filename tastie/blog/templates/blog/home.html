@@ -10,7 +10,7 @@
         			<a href="{% url 'user-posts' post.author.username %}"><img class="rounded-circle article-img ml-4 mr-1"src="{{ post.author.profile.image.url }}" alt="Profile Pic"></a>
         		</div>
         		<div class="media-body">
-        		  <p class="m-0 mt-2 anton-font"><a href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a></p>
+        		  <p class="text-info m-0 mt-2 anton-font"><a href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a></p>
         		  <span class="text-muted small-text">Posted: {{ post.date_posted|date:"d/m/Y G:i" }}</span>
         	  </div>
           </div>
